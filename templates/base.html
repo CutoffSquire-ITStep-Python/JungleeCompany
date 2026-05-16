@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JungleeCompany — {{ title }}</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="site-body">
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="{% url 'home' %}" class="logo">JungleeCompany</a>
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}" class="nav-link {% block nav_home %}{% endblock %}">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'news' %}" class="nav-link {% block nav_news %}{% endblock %}">Новини</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'management' %}" class="nav-link {% block nav_management %}{% endblock %}">Керівництво</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'about' %}" class="nav-link {% block nav_about %}{% endblock %}">Про компанію</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'contact' %}" class="nav-link {% block nav_contact %}{% endblock %}">Контакти</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="logo">JungleeCompany</div>
+            <p class="footer-copyright">© 2010-{% now "Y" %} JungleeCompany. Усі права захищено.</p>
+            <p class="footer-slogan">Будуємо ваше майбутнє блок за блоком!</p>
+
+            <div class="footer-contacts">
+                <p>Київ: <a href="tel:+380441234567">+380 (44) 123-45-67</a></p>
+                <p>Email: <a href="mailto:info@jungleecompany.ua">info@jungleecompany.ua</a></p>
+            </div>
+
+            <div class="footer-links">
+                <a href="{% url 'about' %}">Про компанію</a> •
+                <a href="{% url 'contact' %}">Контакти</a> •
+                <a href="{% url 'news' %}">Новини</a>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
