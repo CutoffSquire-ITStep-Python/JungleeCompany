@@ -32,7 +32,13 @@
                         <a href="{% url 'about' %}" class="nav-link {% block nav_about %}{% endblock %}">Про компанію</a>
                     </li>
                     <li class="nav-item">
+                        <a href="{% url 'locations' %}" class="nav-link {% block nav_locations %}{% endblock %}">Локації</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{% url 'contact' %}" class="nav-link {% block nav_contact %}{% endblock %}">Контакти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'api' %}" class="nav-link {% block nav_api %}{% endblock %}">АПI</a>
                     </li>
                 </ul>
             </nav>

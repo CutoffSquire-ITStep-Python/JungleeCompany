@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block nav_locations %}active{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+	<h1>Наші локації</h1>
+	<p>Місця, де ми працюємо та творимо магію щодня</p>
+</div>
+
+<div class="grid">
+	{% for location in locations %}
+	<div class="news-item">
+		<span class="news-date">{{ location.portal_status }}</span>
+		<h3>{{ location.name }}</h3>
+		<p>{{ location.description }}</p>
+
+		<ul class="feature-list">
+			<li><strong>Години роботи:</strong> {{ location.working_hours }}</li>
+			<li><strong>Хранитель:</strong> {{ location.guardian }}</li>
+			<li><strong>Таємний пароль:</strong> {{ location.secret_password }}</li>
+		</ul>
+	</div>
+	{% empty %}
+	<div class="block">
+		<p>Наразі локації відсутні.</p>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

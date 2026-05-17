@@ -8,39 +8,18 @@
     <p>Команда професіоналів, яка веде нас до успіху</p>
 </section>
 
+{% for person in management %}
 <div class="person-card">
-    <div class="person-avatar">ОП</div>
+    <div class="person-avatar">{{ person.initials }}</div>
     <div class="person-info">
-        <h3>Олексій Петренко</h3>
-        <span class="person-role">Генеральний директор</span>
-        <p>Засновник компанії з 20-річним досвідом у будівельній галузі. Веде стратегічний розвиток JungleeCompany з 2010 року.</p>
+        <h3>{{ person.name }}</h3>
+        <span class="person-role">{{ person.role }}</span>
+        <p>{{ person.description }}</p>
     </div>
 </div>
-
-<div class="person-card">
-    <div class="person-avatar">МК</div>
-    <div class="person-info">
-        <h3>Марія Коваленко</h3>
-        <span class="person-role">Технічний директор</span>
-        <p>Інженер-будівельник вищої категорії. Відповідає за технічну якість усіх проєктів та впровадження сучасних технологій.</p>
-    </div>
+{% empty %}
+<div class="block">
+    <p>Інформація про керівництво наразі відсутня.</p>
 </div>
-
-<div class="person-card">
-    <div class="person-avatar">ІШ</div>
-    <div class="person-info">
-        <h3>Іван Шевченко</h3>
-        <span class="person-role">Фінансовий директор</span>
-        <p>Управляє фінансовою стратегією компанії. Забезпечує прозорість та ефективність усіх бізнес-процесів.</p>
-    </div>
-</div>
-
-<div class="person-card">
-    <div class="person-avatar">ОБ</div>
-    <div class="person-info">
-        <h3>Олена Бондаренко</h3>
-        <span class="person-role">Головний архітектор</span>
-        <p>Творець унікальних архітектурних рішень. Поєднує функціональність, естетику та екологічність у кожному проєкті.</p>
-    </div>
-</div>
+{% endfor %}
 {% endblock %}
