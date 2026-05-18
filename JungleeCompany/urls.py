@@ -7,3 +7,5 @@ urlpatterns = [
     path('locations/', include('locations.urls')),
     path('api/', include('api.urls')),
 ]
+
+handler404 = 'core.views.custom_404_view'

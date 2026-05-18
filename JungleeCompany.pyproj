@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="api\templates\api\index.html" />
+    <Content Include="core\templates\404.html" />
     <Content Include="core\templates\about.html" />
     <Content Include="core\templates\contact.html" />
     <Content Include="core\templates\index.html" />

@@ -436,6 +436,52 @@ ul.feature-list {
         padding: 0 5px;
     }
 
+/* ===== СТОРІНКА 404 ===== */
+.error-page {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.error-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.error-digit {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 120px;
+    color: var(--white);
+    text-shadow: 6px 6px 0 var(--grass-dark), 12px 12px 0 var(--shadow);
+    line-height: 1;
+}
+
+.error-title {
+    color: var(--grass-dark);
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.error-hint {
+    font-size: 22px;
+    color: var(--black);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0 40px;
+}
+
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 768px) {
     body {
@@ -470,4 +516,8 @@ ul.feature-list {
         .hero p {
             font-size: 20px;
         }
+
+    .error-digit {
+        font-size: 80px;
+    }
 }

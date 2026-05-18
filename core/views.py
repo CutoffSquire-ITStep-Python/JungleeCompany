@@ -18,3 +18,8 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html', {'title': 'Контакти'})
+
+
+def custom_404_view(request, exception):
+    message = str(exception) if str(exception) else 'Сторінку не знайдено'
+    return render(request, '404.html', {'message': message}, status=404)
