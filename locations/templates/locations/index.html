@@ -9,17 +9,32 @@
 	<p>Місця, де ми працюємо та творимо магію щодня</p>
 </div>
 
+<div class="form-actions" style="margin-bottom: 30px;">
+	<a href="{% url 'location_create' %}" class="pixel-btn">+ Додати локацію</a>
+	<a href="{% url 'guardian_create' %}" class="pixel-btn pixel-btn-secondary">+ Додати сторожа</a>
+</div>
+
 <div class="grid">
 	{% for location in locations %}
-	<div class="news-item">
+	<div class="news-item location-card">
+		<div class="location-image">
+			{% if location.image %}
+			<img src="{{ location.image.url }}" alt="{{ location.name }}">
+			{% else %}
+			<div class="location-image-placeholder">
+				<span>NO IMAGE</span>
+			</div>
+			{% endif %}
+		</div>
+
 		<span class="news-date">{{ location.portal_status }}</span>
 		<h3>{{ location.name }}</h3>
 		<p>{{ location.description }}</p>
 
 		<ul class="feature-list">
-			<li><strong>Години роботи:</strong> {{ location.working_hours }}</li>
-			<li><strong>Хранитель:</strong> {{ location.guardian }}</li>
-			<li><strong>Таємний пароль:</strong> {{ location.secret_password }}</li>
+			<li><strong>Години роботи:</strong> {{ location.work_starts_at }} - {{ location.finish_work_at }}</li>
+			<li><strong>Хранитель:</strong> {{ location.guardian|default:"Не призначено" }}</li>
+			<li><strong>Таємний пароль:</strong> {{ location.secret_password|default:"Не встановлено" }}</li>
 		</ul>
 	</div>
 	{% empty %}
