@@ -8,12 +8,16 @@
     <p>Команда професіоналів, яка веде нас до успіху</p>
 </section>
 
+<div class="form-actions" style="margin-bottom: 30px;">
+    <a href="{% url 'management_create' %}" class="pixel-btn">+ Додати роботника</a>
+</div>
+
 {% for person in management %}
 <div class="person-card">
     <div class="person-avatar">{{ person.initials }}</div>
     <div class="person-info">
-        <h3>{{ person.name }}</h3>
-        <span class="person-role">{{ person.role }}</span>
+        <h3>{{ person.full_name }}</h3>
+        <span class="person-role">{{ person.get_role_display }}</span>
         <p>{{ person.description }}</p>
     </div>
 </div>

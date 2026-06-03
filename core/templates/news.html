@@ -8,9 +8,13 @@
     <p>Слідкуйте за нашими останніми досягненнями та подіями</p>
 </section>
 
+<div class="form-actions" style="margin-bottom: 30px;">
+    <a href="{% url 'news_create' %}" class="pixel-btn">+ Додати новину</a>
+</div>
+
 {% for new in news %}
 <article class="news-item">
-    <span class="news-date">{{ new.date }}</span>
+    <span class="news-date">{{ new.publish_date|date:"d.m.Y" }}</span>
     <h3>{{ new.title }}</h3>
     <p>{{ new.content }}</p>
 </article>

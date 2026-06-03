@@ -9,14 +9,24 @@
 </section>
 
 <div class="grid">
-	<a href="{% url 'api' %}?action=news" class="card" style="text-decoration: none;">
+	<a href="{% url 'api/news' %}?action=news" class="card" style="text-decoration: none;">
 		<h3>📰 Новини</h3>
 		<p>Список усіх новин компанії</p>
 	</a>
 
-	<a href="{% url 'api' %}?action=management" class="card" style="text-decoration: none;">
+	<a href="{% url 'api/employees' %}?action=management" class="card" style="text-decoration: none;">
 		<h3>👔 Керівництво</h3>
 		<p>Інформація про керівний склад</p>
+	</a>
+
+	<a href="{% url 'api/locations' %}?action=management" class="card" style="text-decoration: none;">
+		<h3>🖼️ Локації</h3>
+		<p>Інформація про локації</p>
+	</a>
+
+	<a href="{% url 'api/guardians' %}?action=management" class="card" style="text-decoration: none;">
+		<h3>🧙‍ Гардіани</h3>
+		<p>Інформація про гардіанів</p>
 	</a>
 </div>
 {% endblock %}
