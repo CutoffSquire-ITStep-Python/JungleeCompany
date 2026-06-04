@@ -3,6 +3,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>JungleeCompany</Name>
     <RootNamespace>JungleeCompany</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -55,7 +56,10 @@
     <Compile Include="JungleeCompany\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".env" />
+    <Content Include=".gitignore" />
     <Content Include="api\templates\api\index.html" />
+    <Content Include="build.sh" />
     <Content Include="core\templates\404.html" />
     <Content Include="core\templates\about.html" />
     <Content Include="core\templates\contact.html" />
@@ -67,6 +71,7 @@
     <Content Include="locations\templates\locations\guardian_form.html" />
     <Content Include="locations\templates\locations\location_form.html" />
     <Content Include="locations\templates\locations\index.html" />
+    <Content Include="render.yaml" />
     <Content Include="requirements.txt" />
     <Content Include="static\css\styles.css" />
     <Content Include="static\favicon.ico" />
@@ -90,6 +95,17 @@
     <Folder Include="static\img\" />
     <Folder Include="static\js\" />
     <Folder Include="templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.14</Version>
+      <Description>env (Python 3.14.3)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
